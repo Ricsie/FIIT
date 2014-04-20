@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+org.jboss.ide.eclipse.as.core.singledeployable.deployableList=src/Antik\ncreate.sql\nsrc/Antik/Titul.java\nsrc/Antik/GUI.fxml\n\nsrc/Antik/HibernateUtil.java\nhibernate.cfg.xml\nsrc/Antik/View.java\nsrc/Antik/ComboItem.java\nsrc/Antik/Controller.java\nsrc/Antik/NajdenyTitulKomplet.java\nsrc\nsrc/Antik/NajdenyTitul.java\nsrc/Antik/TitulManager.java\nsrc/Antik/AutorPocet.java\n
