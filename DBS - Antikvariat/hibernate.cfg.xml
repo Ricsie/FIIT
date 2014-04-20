@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+ <datasource jndi-name="java:jboss/datasources/New_PostgreSQL" enabled="true" 
+     use-java-context="true" pool-name="New_PostgreSQL">
+  <connection-url>jdbc:postgresql://localhost:5432/Antik</connection-url>
+  <driver>postgresql-9.3-1101.jdbc41.jar</driver>
+  <pool></pool>
+  <security>
+   <user-name>postgres</user-name>
+   <password>cocker</password>
+  </security>
+ </datasource>
+</datasources>

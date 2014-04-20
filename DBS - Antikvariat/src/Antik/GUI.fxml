@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="Anchor" prefHeight="867.0" prefWidth="1288.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Antik.Controller">
+  <!-- TODO Add Nodes -->
+  <children>
+    <TextArea fx:id="textArea" layoutX="446.0" layoutY="22.0" prefHeight="831.0" prefWidth="746.0" wrapText="true" />
+    <Button fx:id="btn" layoutX="1198.0" layoutY="22.0" mnemonicParsing="false" onAction="#clear" prefHeight="831.0" prefWidth="76.0" text="Clear" />
+    <Accordion layoutX="28.0" layoutY="16.0" prefHeight="831.0" prefWidth="399.0">
+      <expandedPane>
+        <TitledPane id="accordion" fx:id="x5" animated="false" minWidth="398.0" prefHeight="749.0" prefWidth="399.0" text="Zobrazenia + štatistika">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="725.0" prefWidth="395.0">
+              <children>
+                <Button id="vlozTitul" fx:id="stat1" layoutX="22.0" layoutY="321.0" mnemonicParsing="false" onAction="#statistika1" prefWidth="351.0" text="Zobraz štatistiku počtu titulov po autoroch" />
+                <Button fx:id="zobrazTitul" layoutX="22.0" layoutY="33.0" mnemonicParsing="false" onAction="#vypisTitul" prefWidth="351.0" text="Zobraz tituly" />
+                <Button fx:id="zobrazAutor" layoutX="22.0" layoutY="68.0" mnemonicParsing="false" onAction="#vypisAutor" prefWidth="351.0" text="Zobraz autorov" />
+                <Button fx:id="zobrazZaner" layoutX="22.0" layoutY="109.0" mnemonicParsing="false" onAction="#vypisZaner" prefWidth="351.0" text="Zobraz žánre" />
+                <Button fx:id="vypKomplet" layoutX="22.0" layoutY="204.0" mnemonicParsing="false" onAction="#vypisKomplet" prefWidth="351.0" text="Zobraz kompletné info a všetky tituly" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+      </expandedPane>
+      <panes>
+        <TitledPane id="accordion" fx:id="x1" animated="false" minWidth="398.0" prefHeight="417.0" prefWidth="398.0" text="Pridaj">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="488.0">
+              <children>
+                <Accordion layoutX="6.0" layoutY="3.0" prefHeight="604.0" prefWidth="359.0">
+                  <expandedPane>
+                    <TitledPane fx:id="x6" animated="false" text="Naviaž žáner na titul">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Button id="naviaxTitul" fx:id="naviazTitul" layoutX="31.0" layoutY="101.0" mnemonicParsing="false" onAction="#insertZanerstvo" prefWidth="297.0" text="Naviaž žáner na titul" />
+                            <TextField fx:id="idZaner" layoutX="120.0" layoutY="32.0" prefWidth="200.0" />
+                            <Label layoutX="24.0" layoutY="32.0" text="" />
+                            <Label layoutX="45.0" layoutY="32.0" prefHeight="21.999908447265625" text="Žáner ID:" />
+                            <Label layoutX="45.0" layoutY="67.0" text="Titul ID:" />
+                            <TextField fx:id="idTitul1" layoutX="120.0" layoutY="64.0" prefWidth="200.0" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                  </expandedPane>
+                  <panes>
+                    <TitledPane animated="false" text="Nový titul">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="379.0">
+                          <children>
+                            <Button fx:id="vlozTitul" layoutX="15.0" layoutY="267.0" mnemonicParsing="false" onAction="#insertTitul" prefWidth="351.0" text="Vlož Titul" />
+                            <TextField fx:id="nazovTField" layoutX="88.0" layoutY="117.0" prefWidth="200.0" promptText="Názov titulu" text="" />
+                            <ComboBox fx:id="comboBox" layoutX="87.0" layoutY="42.0" prefHeight="21.0" prefWidth="271.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                            <Label layoutX="7.0" layoutY="45.0" text="Typ produktu:" />
+                            <Label layoutX="51.0" layoutY="76.0" text="Sklad:" />
+                            <ComboBox fx:id="skladComboBox" layoutX="86.0" layoutY="75.0" prefHeight="21.0" prefWidth="271.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Item 1" />
+                                  <String fx:value="Item 2" />
+                                  <String fx:value="Item 3" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                            <TextField fx:id="stavTField" layoutX="88.0" layoutY="157.0" prefWidth="200.0" promptText="Stav" text="" />
+                            <Label layoutX="15.0" layoutY="120.0" text="Názov titulu:" />
+                            <Label layoutX="58.0" layoutY="157.0" text="Stav:" />
+                            <TextField fx:id="rokTField" layoutX="89.0" layoutY="195.0" prefWidth="200.0" promptText="Rok vydania" text="" />
+                            <Label layoutX="19.0" layoutY="196.0" text="Rok vydania:" />
+                            <TextField fx:id="cenaTField" layoutX="90.0" layoutY="232.0" prefWidth="200.0" promptText="Stav" text="" />
+                            <Label layoutX="54.0" layoutY="232.0" text="Cena:" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" text="Nového autora">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Label layoutX="14.0" layoutY="34.0" text="Meno autora" />
+                            <TextField fx:id="menoAutora" layoutX="103.0" layoutY="31.0" prefWidth="200.0" />
+                            <Button id="vlozTitul" fx:id="vlozAutora" layoutX="27.0" layoutY="80.0" mnemonicParsing="false" onAction="#insertAutor" prefWidth="301.0" text="Pridaj autora" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" text="Naviaž autora na titul">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <TextField fx:id="idAutor" layoutX="117.0" layoutY="31.0" prefWidth="200.0" />
+                            <TextField fx:id="idTitul" layoutX="117.0" layoutY="65.0" prefWidth="200.0" />
+                            <Label layoutX="34.0" layoutY="34.0" text="Autor id:" />
+                            <Label layoutX="34.0" layoutY="65.0" prefHeight="21.999908447265625" text="Titul id:" />
+                            <Button fx:id="naviazAutora" layoutX="26.0" layoutY="116.0" mnemonicParsing="false" onAction="#insertNaviazanieAutor" prefWidth="312.0" text="Naviaž autora na titul" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <TitledPane animated="false" text="Nový žáner">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <TextField fx:id="zanerNazov" layoutX="119.0" layoutY="41.0" prefWidth="200.0" />
+                            <Label layoutX="39.0" layoutY="44.0" text="Názov źánru" />
+                            <Button fx:id="vlozZaner" layoutX="32.0" layoutY="87.0" mnemonicParsing="false" onAction="#insertZaner" prefWidth="316.0" text="Pridaj nový žáner" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </TitledPane>
+                    <fx:reference source="x6" />
+                  </panes>
+                </Accordion>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane id="x1" fx:id="x2" animated="false" prefHeight="366.0" prefWidth="492.0" text="Zmeň stav titulu">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="395.0">
+              <children>
+                <Button id="vlozTitul" fx:id="zmenTitul" layoutX="22.0" layoutY="231.0" mnemonicParsing="false" onAction="#updateTitul" prefWidth="351.0" text="Zmeň Titul" />
+                <TextField id="nazovTField" fx:id="nazovTField1" layoutX="101.0" layoutY="80.0" prefWidth="200.0" promptText="Názov titulu" text="" />
+                <ComboBox id="comboBox" fx:id="comboBox1" layoutX="99.0" layoutY="13.0" prefHeight="21.0" prefWidth="271.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <Label layoutX="19.0" layoutY="16.0" text="Typ produktu:" />
+                <Label layoutX="63.0" layoutY="47.0" text="Sklad:" />
+                <ComboBox id="skladComboBox" fx:id="skladComboBox1" layoutX="99.0" layoutY="47.0" prefHeight="21.0" prefWidth="271.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <TextField id="stavTField" fx:id="stavTField1" layoutX="101.0" layoutY="106.0" prefWidth="200.0" promptText="Stav" text="" />
+                <Label layoutX="30.0" layoutY="83.0" text="Názov titulu:" />
+                <Label layoutX="70.0" layoutY="109.0" text="Stav:" />
+                <TextField id="rokTField" fx:id="rokTField1" layoutX="99.0" layoutY="136.0" prefWidth="200.0" promptText="Rok vydania" text="" />
+                <Label layoutX="32.0" layoutY="136.0" text="Rok vydania:" />
+                <TextField id="cenaTField" fx:id="cenaTField1" layoutX="101.0" layoutY="163.0" prefWidth="200.0" promptText="Stav" text="" />
+                <Label layoutX="66.0" layoutY="166.0" text="Cena:" />
+                <TextField id="cenaTField" fx:id="titulID" layoutX="101.0" layoutY="194.0" prefWidth="200.0" promptText="ID" text="" />
+                <Label layoutX="80.0" layoutY="197.0" text="ID:" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane id="accordion" fx:id="x3" animated="false" minWidth="398.0" prefHeight="381.0" prefWidth="399.0" text="Zmaž titul">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="289.9999000000025" prefWidth="395.0000999999975">
+              <children>
+                <Button id="vlozTitul" fx:id="zmazTitul" layoutX="17.0" layoutY="64.0" mnemonicParsing="false" onAction="#zmazPodlaId" prefWidth="351.0" text="Zmaž titul podľa ID" />
+                <TextField fx:id="titulID1" layoutX="121.0" layoutY="27.0" prefWidth="200.0" />
+                <Label layoutX="39.0" layoutY="30.0" text="ID" />
+                <TextField id="titulID1" fx:id="rokField" layoutX="121.0" layoutY="107.0" prefWidth="200.0" />
+                <Button id="vlozTitul" fx:id="zmazTitul1" layoutX="17.0" layoutY="145.0" mnemonicParsing="false" onAction="#zmazPodlaRoku" prefWidth="351.0" text="Zmaž tituly s večším rokom ako zadaný" />
+                <Label layoutX="45.0" layoutY="110.0" text="Rok" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane id="accordion" fx:id="x4" animated="false" minWidth="398.0" prefHeight="381.0" prefWidth="399.0" text="Vyhľadaj podľa názvu a autora">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="289.9999000000025" prefWidth="395.0000999999975">
+              <children>
+                <TextField id="titulID1" fx:id="vyhNazovField" layoutX="121.0" layoutY="27.0" prefWidth="200.0" />
+                <Label layoutX="51.0" layoutY="27.0" text="Názov" />
+                <TextField id="titulID1" fx:id="vyhAutorField" layoutX="121.0" layoutY="61.0" prefWidth="200.0" />
+                <Button id="vlozTitul" fx:id="vyhladajTitul" layoutX="17.0" layoutY="96.0" mnemonicParsing="false" onAction="#vyhladajPodlaAutora" prefWidth="351.0" text="Vyhľadaj" />
+                <Label layoutX="51.0" layoutY="64.0" text="Autor" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <fx:reference source="x5" />
+      </panes>
+    </Accordion>
+  </children>
+</AnchorPane>
