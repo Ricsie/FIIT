@@ -13,6 +13,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.ArrayList;
 
+import GUI.Controller;
+
 public class TitulManager {
 	static Connection conn = null;
 	static Properties connectionProps = new Properties();
